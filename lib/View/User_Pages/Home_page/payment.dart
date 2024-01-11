@@ -8,6 +8,7 @@ class PaymentDetailsPage extends StatelessWidget {
   const PaymentDetailsPage({
     required this.packageName,
     required this.packagePrice,
+    required Map<String, dynamic> providerData,
   });
 
   @override
@@ -296,10 +297,8 @@ class PaymentDetailsPage extends StatelessWidget {
                                   color: Colors.black,
                                 ),
                               ),
-                              Icon(
-                                Icons.payments,
-                                color: Colors.black,
-                              )
+                              Image.asset("assets/images/payment1.png",
+                                  height: 30),
                             ]),
                         SizedBox(
                           height: 20,
@@ -314,10 +313,8 @@ class PaymentDetailsPage extends StatelessWidget {
                                   color: Colors.black,
                                 ),
                               ),
-                              Icon(
-                                Icons.attach_money_sharp,
-                                color: Colors.black,
-                              )
+                              Image.asset("assets/images/payment2.png",
+                                  height: 30),
                             ]),
                         SizedBox(
                           height: 20,

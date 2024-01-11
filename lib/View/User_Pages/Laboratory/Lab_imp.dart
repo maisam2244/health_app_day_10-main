@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -7,16 +6,16 @@ import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:get/get.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:health/View/User_Pages/Home_page/payment.dart';
+import 'package:health/View/User_Pages/Home_page/labtest.dart';
 
-class NurseVisit extends StatefulWidget {
-  const NurseVisit({super.key});
+class LabImp extends StatefulWidget {
+  const LabImp({super.key});
 
   @override
-  State<NurseVisit> createState() => _NurseVisitState();
+  State<LabImp> createState() => _LabImpState();
 }
 
-class _NurseVisitState extends State<NurseVisit> {
+class _LabImpState extends State<LabImp> {
   Completer<GoogleMapController> _controller = Completer();
   static final CameraPosition kGooglePlex = CameraPosition(
     target: LatLng(24.8846, 67.1754),
@@ -126,14 +125,11 @@ class _NurseVisitState extends State<NurseVisit> {
                       fireStore.doc(user!.email).set({
                         "email": user.email,
                         "address": stAddress,
-                        "type": "Nurse Visit"
+                        "type": "Doctor Visit"
                       });
-                      Get.to(() => PaymentDetailsPage(
-                            packageName: "Nurse Visit",
-                            packagePrice: "200SAR",
-                            providerData: {},
+                      Get.to(() => LabTest(
+                            address: stAddress,
                           ));
-                      Navigator.pop(context);
                     });
                   },
                   textCancel: "Cancel".tr,

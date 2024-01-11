@@ -15,8 +15,13 @@ import 'package:health/Resources/Services_grid/home_services.dart';
 import 'package:health/Resources/Services_grid/user_grid.dart';
 import 'package:health/View/Splash_Screen/splash_screen.dart';
 import 'package:health/View/User_Pages/Doctor_visit/doctor_visit.dart';
+import 'package:health/View/User_Pages/E-CLINIC/e_clinic.dart';
+import 'package:health/View/User_Pages/Home_page/labtest.dart';
+import 'package:health/View/User_Pages/Home_page/payment.dart';
+import 'package:health/View/User_Pages/Laboratory/Lab_imp.dart';
 import 'package:health/View/User_Pages/Laboratory/laboratory.dart';
 import 'package:health/View/User_Pages/Nurse_visit/nurse_visit.dart';
+import 'package:health/View/User_Pages/Vitamin_IV_drips_and_fluids/Vitamin_IV_drips_and_fluids.dart';
 import 'package:health/View/User_Pages/virtual_consultation/virtual_consultation.dart';
 
 class HomePage extends StatefulWidget {
@@ -90,11 +95,16 @@ class _HomePageState extends State<HomePage> {
                               fontWeight: FontWeight.w500,
                               fontSize: 15),
                         ),
-                        subtitle: Text("Virtual Medical Service",
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 16)),
+                        subtitle: GestureDetector(
+                          onTap: () {
+                            Get.to(() => AvailableProviders());
+                          },
+                          child: Text("Virtual Medical Service",
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 16)),
+                        ),
                       ),
                     ),
                   ),
@@ -108,7 +118,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                   child: ListTile(
                     onTap: () {
-                      Get.to(() => AvailableProviders());
+                      Get.to(() => E_Clinics());
                     },
                     tileColor: Colors.white,
                     leading: Icon(Icons.videocam_rounded,
@@ -177,52 +187,59 @@ class _HomePageState extends State<HomePage> {
                       Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            // SizedBox(
-                            //   width: 30,
-                            // ),
-                            Container(
-                              height: 120.0,
-                              width: 160.0,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(15),
-                                color: Color.fromARGB(255, 155, 218, 251),
-                              ),
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Column(children: [
-                                  Text("Laboratory",
-                                      style: TextStyle(
-                                          color: Colors.black,
-                                          fontSize: 18,
-                                          fontWeight: FontWeight.bold)),
-                                  Image.asset(
-                                    "assets/images/1.png",
-                                    height: 60,
-                                  ),
-                                ]),
+                            GestureDetector(
+                              onTap: () {
+                                Get.to(() => LabImp());
+                              },
+                              child: Container(
+                                height: 120.0,
+                                width: 160.0,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(15),
+                                  color: Color.fromARGB(255, 155, 218, 251),
+                                ),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Column(children: [
+                                    Text("Laboratory",
+                                        style: TextStyle(
+                                            color: Colors.black,
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.bold)),
+                                    Image.asset(
+                                      "assets/images/1.png",
+                                      height: 60,
+                                    ),
+                                  ]),
+                                ),
                               ),
                             ),
                             SizedBox(width: 30),
-                            Container(
-                              height: 120.0,
-                              width: 160.0,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(15),
-                                color: Color.fromARGB(255, 155, 218, 251),
-                              ),
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Column(children: [
-                                  Text("Doctor Visit",
-                                      style: TextStyle(
-                                          color: Colors.black,
-                                          fontSize: 18,
-                                          fontWeight: FontWeight.bold)),
-                                  Image.asset(
-                                    "assets/images/2.png",
-                                    height: 60,
-                                  ),
-                                ]),
+                            GestureDetector(
+                              onTap: () {
+                                Get.to(() => DoctorVisit());
+                              },
+                              child: Container(
+                                height: 120.0,
+                                width: 160.0,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(15),
+                                  color: Color.fromARGB(255, 155, 218, 251),
+                                ),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Column(children: [
+                                    Text("Doctor Visit",
+                                        style: TextStyle(
+                                            color: Colors.black,
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.bold)),
+                                    Image.asset(
+                                      "assets/images/2.png",
+                                      height: 60,
+                                    ),
+                                  ]),
+                                ),
                               ),
                             ),
                           ]),
@@ -232,49 +249,62 @@ class _HomePageState extends State<HomePage> {
                       Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Container(
-                              height: 120.0,
-                              width: 160.0,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(15),
-                                color: Color.fromARGB(255, 155, 218, 251),
-                              ),
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Column(children: [
-                                  Text("Nurse Visit",
-                                      style: TextStyle(
-                                          color: Colors.black,
-                                          fontSize: 18,
-                                          fontWeight: FontWeight.bold)),
-                                  Image.asset(
-                                    "assets/images/3.png",
-                                    height: 60,
-                                  ),
-                                ]),
+                            GestureDetector(
+                              onTap: () {
+                                Get.to(() => NurseVisit());
+                              },
+                              child: Container(
+                                height: 120.0,
+                                width: 160.0,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(15),
+                                  color: Color.fromARGB(255, 155, 218, 251),
+                                ),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Column(children: [
+                                    Text("Nurse Visit",
+                                        style: TextStyle(
+                                            color: Colors.black,
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.bold)),
+                                    Image.asset(
+                                      "assets/images/3.png",
+                                      height: 60,
+                                    ),
+                                  ]),
+                                ),
                               ),
                             ),
                             SizedBox(width: 30),
-                            Container(
-                              height: 120.0,
-                              width: 160.0,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(15),
-                                color: Color.fromARGB(255, 155, 218, 251),
-                              ),
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Column(children: [
-                                  Text("Vitamin IV Drips",
-                                      style: TextStyle(
-                                          color: Colors.black,
-                                          fontSize: 18,
-                                          fontWeight: FontWeight.bold)),
-                                  Image.asset(
-                                    "assets/images/4.png",
-                                    height: 60,
-                                  ),
-                                ]),
+                            GestureDetector(
+                              onTap: () {
+                                Get.to(() => Vitamin(
+                                      userModel: widget.userModel,
+                                      firebaseUser: widget.firebaseUser,
+                                    ));
+                              },
+                              child: Container(
+                                height: 120.0,
+                                width: 160.0,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(15),
+                                  color: Color.fromARGB(255, 155, 218, 251),
+                                ),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Column(children: [
+                                    Text("Vitamin IV Drips",
+                                        style: TextStyle(
+                                            color: Colors.black,
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.bold)),
+                                    Image.asset(
+                                      "assets/images/4.png",
+                                      height: 60,
+                                    ),
+                                  ]),
+                                ),
                               ),
                             ),
                           ]),

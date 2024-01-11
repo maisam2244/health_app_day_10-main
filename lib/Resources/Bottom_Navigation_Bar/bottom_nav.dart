@@ -6,14 +6,20 @@ import 'package:health/Chat_App/Pages/Home.dart';
 import 'package:health/Resources/AppColors/app_colors.dart';
 import 'package:health/Resources/Profile/profile.dart';
 import 'package:health/View/User_Pages/Home_page/home_page.dart';
+import 'package:health/View/User_Pages/Home_page/settings.dart';
 import 'package:health/View/User_services/User_appointments/User_appointments.dart';
 
-class MyBottomNavBar extends StatelessWidget {
+class MyBottomNavBar extends StatefulWidget {
   final UserModel userModel;
   final User firebaseUser;
   const MyBottomNavBar(
       {super.key, required this.userModel, required this.firebaseUser});
 
+  @override
+  State<MyBottomNavBar> createState() => _MyBottomNavBarState();
+}
+
+class _MyBottomNavBarState extends State<MyBottomNavBar> {
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
@@ -35,30 +41,32 @@ class MyBottomNavBar extends StatelessWidget {
           label: "Chats",
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.person, size: 40),
-          label: "My Profile",
+          icon: Icon(Icons.settings, size: 40),
+          label: "Settings",
         ),
       ],
       onTap: (index) {
+        setState(() {
+          if (index == 0) {
+            Get.to(() => HomePage(
+                  userModel: widget.userModel,
+                  firebaseUser: widget.firebaseUser,
+                ));
+          } else if (index == 1) {
+            Get.to(() => MyAppointments(
+                  userModel: widget.userModel,
+                  firebaseUser: widget.firebaseUser,
+                ));
+          } else if (index == 2) {
+            Get.to(() => Home(
+                  userModel: widget.userModel,
+                  firebaseUser: widget.firebaseUser,
+                ));
+          } else if (index == 3) {
+            Get.to(() => SettingsPage());
+          }
+        });
         // Handle item click based on index
-        if (index == 0) {
-          Get.to(() => HomePage(
-                userModel: userModel,
-                firebaseUser: firebaseUser,
-              ));
-        } else if (index == 1) {
-          Get.to(() => MyAppointments(
-                userModel: userModel,
-                firebaseUser: firebaseUser,
-              ));
-        } else if (index == 2) {
-          Get.to(() => Home(
-                userModel: userModel,
-                firebaseUser: firebaseUser,
-              ));
-        } else if (index == 3) {
-          Get.to(() => ProfilePage());
-        }
       },
     );
   }

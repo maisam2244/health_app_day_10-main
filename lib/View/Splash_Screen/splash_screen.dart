@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:health/Resources/Button/mybutton.dart';
 import 'package:health/View/Provider_Authentication/provider_login.dart';
+import 'package:health/View/Provider_Authentication/provider_register.dart';
 import 'package:health/View/User_Authentication/user_login.dart';
+import 'package:health/View/User_Authentication/user_register.dart';
 
 class Splash_Screen extends StatefulWidget {
   Splash_Screen({
@@ -19,7 +21,6 @@ class _Splash_ScreenState extends State<Splash_Screen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
       backgroundColor: Colors.white,
       appBar: AppBar(
         automaticallyImplyLeading: false,
@@ -85,7 +86,7 @@ class _Splash_ScreenState extends State<Splash_Screen> {
               RoundButton(
                 text: "Join as a user".tr,
                 onTap: () {
-                  Get.to(() => LoginScreen());
+                  Get.to(() => User_Register());
                 },
               ),
               SizedBox(
@@ -94,7 +95,7 @@ class _Splash_ScreenState extends State<Splash_Screen> {
               RoundButton(
                 text: "Join as a provider".tr,
                 onTap: () {
-                  Get.to(() => Provider_login());
+                  Get.to(() => Provider_Register());
                 },
               ),
               SizedBox(

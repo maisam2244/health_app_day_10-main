@@ -139,7 +139,7 @@ class _SettingsPageState extends State<SettingsPage> {
                         child: Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 15),
                           child: Text(
-                            "Settings",
+                            "More",
                             style: TextStyle(
                                 fontSize: 20, fontWeight: FontWeight.bold),
                           ),
@@ -147,11 +147,11 @@ class _SettingsPageState extends State<SettingsPage> {
                       ),
                       ListTile(
                         leading: Icon(
-                          Icons.language,
+                          Icons.info,
                           size: 40,
                         ),
                         title: Text(
-                          "Language",
+                          "About Harees",
                           style: TextStyle(color: Colors.blue),
                         ),
                         trailing: Icon(
@@ -171,11 +171,11 @@ class _SettingsPageState extends State<SettingsPage> {
                         children: [
                           ListTile(
                             leading: Icon(
-                              Icons.language,
+                              Icons.terminal_sharp,
                               size: 40,
                             ),
                             title: Text(
-                              "Language",
+                              "Terms and Conditions",
                               style: TextStyle(color: Colors.blue),
                             ),
                             trailing: Icon(
@@ -188,11 +188,11 @@ class _SettingsPageState extends State<SettingsPage> {
                           ),
                           ListTile(
                             leading: Icon(
-                              Icons.language,
+                              Icons.policy_outlined,
                               size: 40,
                             ),
                             title: Text(
-                              "Language",
+                              "Privacy Policy",
                               style: TextStyle(color: Colors.blue),
                             ),
                             trailing: Icon(
@@ -220,7 +220,7 @@ class _SettingsPageState extends State<SettingsPage> {
                         child: Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 15),
                           child: Text(
-                            "Settings",
+                            "Contacts",
                             style: TextStyle(
                                 fontSize: 20, fontWeight: FontWeight.bold),
                           ),
@@ -228,11 +228,11 @@ class _SettingsPageState extends State<SettingsPage> {
                       ),
                       ListTile(
                         leading: Icon(
-                          Icons.language,
+                          Icons.contacts,
                           size: 40,
                         ),
                         title: Text(
-                          "Language",
+                          "Contact us",
                           style: TextStyle(color: Colors.blue),
                         ),
                         trailing: Icon(

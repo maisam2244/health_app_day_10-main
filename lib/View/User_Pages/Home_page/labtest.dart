@@ -1,11 +1,19 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
 import 'package:health/Resources/AppColors/app_colors.dart';
 import 'package:health/View/User_Pages/Home_page/Lab_resources/lab_more_packages.dart';
 import 'package:health/View/User_Pages/Home_page/Lab_resources/lab_resources.dart';
+import 'package:health/View/User_Pages/Home_page/payment.dart';
+import 'package:health/View/User_Pages/Home_page/settings.dart';
 
 class LabTest extends StatefulWidget {
-  const LabTest({Key? key}) : super(key: key);
+  final String address;
+  const LabTest({
+    Key? key,
+    required this.address,
+  }) : super(key: key);
 
   @override
   State<LabTest> createState() => _LabTestState();
@@ -19,9 +27,14 @@ class _LabTestState extends State<LabTest> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          leading: Icon(
-            Icons.arrow_back_ios_new_sharp,
-            color: Colors.black,
+          leading: GestureDetector(
+            onTap: () {
+              Get.back();
+            },
+            child: Icon(
+              Icons.arrow_back_ios_new_sharp,
+              color: Colors.black,
+            ),
           ),
           title: Text(
             "Laboratory",
@@ -70,7 +83,7 @@ class _LabTestState extends State<LabTest> {
                             color: Colors.green,
                           ),
                           Expanded(
-                            child: Text("Pakistan, Sindh, Karachi. 75100"),
+                            child: Text(widget.address),
                           ),
                         ],
                       ),
@@ -210,66 +223,75 @@ class _LabTestState extends State<LabTest> {
                             crossAxisCount: 2),
                         itemCount: 4,
                         itemBuilder: (context, index) {
-                          return Padding(
-                            padding: const EdgeInsets.all(16.0),
-                            child: Container(
-                              height: 50,
-                              width: 70,
-                              decoration: BoxDecoration(
-                                  color: MyColors.greenColorauth,
-                                  borderRadius: BorderRadius.circular(15)),
-                              child: Column(
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                        horizontal: 10, vertical: 5),
-                                    child: Align(
-                                        alignment: Alignment.topLeft,
-                                        child: Text(
-                                          "Health Check",
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.bold),
-                                        )),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                        horizontal: 10, vertical: 2),
-                                    child: Align(
-                                        alignment: Alignment.topLeft,
-                                        child: Text(
-                                          "Packages",
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.bold),
-                                        )),
-                                  ),
-                                  SizedBox(
-                                    height: 10,
-                                  ),
-                                  Image.asset("assets/images/1.png"),
-                                  Row(
-                                    children: [
-                                      Padding(
-                                        padding: const EdgeInsets.symmetric(
-                                            horizontal: 5, vertical: 12),
-                                        child: Container(
-                                          height: 22,
-                                          width: 135,
-                                          decoration: BoxDecoration(
-                                              borderRadius:
-                                                  BorderRadius.circular(12),
-                                              color: Colors.white),
-                                          child: Center(
-                                            child: Text(
-                                              "Starting at 200 SAR",
-                                              style: TextStyle(
-                                                  fontWeight: FontWeight.bold),
+                          return GestureDetector(
+                            onTap: () {
+                              Get.to(() => PaymentDetailsPage(
+                                  providerData: {},
+                                  packageName: "Health check package",
+                                  packagePrice: "200"));
+                            },
+                            child: Padding(
+                              padding: const EdgeInsets.all(16.0),
+                              child: Container(
+                                height: 50,
+                                width: 70,
+                                decoration: BoxDecoration(
+                                    color: MyColors.greenColorauth,
+                                    borderRadius: BorderRadius.circular(15)),
+                                child: Column(
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          horizontal: 10, vertical: 5),
+                                      child: Align(
+                                          alignment: Alignment.topLeft,
+                                          child: Text(
+                                            "Health Check",
+                                            style: TextStyle(
+                                                fontWeight: FontWeight.bold),
+                                          )),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          horizontal: 10, vertical: 2),
+                                      child: Align(
+                                          alignment: Alignment.topLeft,
+                                          child: Text(
+                                            "Packages",
+                                            style: TextStyle(
+                                                fontWeight: FontWeight.bold),
+                                          )),
+                                    ),
+                                    SizedBox(
+                                      height: 10,
+                                    ),
+                                    Image.asset("assets/images/1.png"),
+                                    Row(
+                                      children: [
+                                        Padding(
+                                          padding: const EdgeInsets.symmetric(
+                                              horizontal: 5, vertical: 12),
+                                          child: Container(
+                                            height: 22,
+                                            width: 135,
+                                            decoration: BoxDecoration(
+                                                borderRadius:
+                                                    BorderRadius.circular(12),
+                                                color: Colors.white),
+                                            child: Center(
+                                              child: Text(
+                                                "Starting at 200 SAR",
+                                                style: TextStyle(
+                                                    fontWeight:
+                                                        FontWeight.bold),
+                                              ),
                                             ),
                                           ),
                                         ),
-                                      ),
-                                    ],
-                                  )
-                                ],
+                                      ],
+                                    )
+                                  ],
+                                ),
                               ),
                             ),
                           );

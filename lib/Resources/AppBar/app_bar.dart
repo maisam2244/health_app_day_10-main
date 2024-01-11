@@ -19,26 +19,27 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     final _auth = FirebaseAuth.instance;
     return AppBar(
-  backgroundColor: Colors.white,
-  elevation: 0,
-  leading: Padding(
-    padding: const EdgeInsets.all(12.0),
-    child: Image.asset("assets/logo/harees_logo.png")
-    // child: CircleAvatar(
-    //   backgroundImage: AssetImage("assets/logo/harees_logo.png"),
-    // ),
-  ),
-  // title: Text(
-  //   userModel.fullname ?? 'User',
-  //   style: TextStyle(color: Colors.white, fontSize: 25, fontWeight: FontWeight.w600),
-  // ),
-  actions: [
-    IconButton(
-      onPressed: () {},
-      icon: Icon(Icons.notifications, color: Color(0xFF50a9c0), size: 30),
-    )
-  ],
-);
-
+      backgroundColor: Colors.white,
+      elevation: 0,
+      leading: Padding(
+          padding: const EdgeInsets.all(12.0),
+          child: Image.asset("assets/logo/harees_logo.png")
+          // child: CircleAvatar(
+          //   backgroundImage: AssetImage("assets/logo/harees_logo.png"),
+          // ),
+          ),
+      // title: Text(
+      //   userModel.fullname ?? 'User',
+      //   style: TextStyle(color: Colors.white, fontSize: 25, fontWeight: FontWeight.w600),
+      // ),
+      actions: [
+        IconButton(
+          onPressed: () {
+            Drawer();
+          },
+          icon: Icon(Icons.notifications, color: Color(0xFF50a9c0), size: 30),
+        )
+      ],
+    );
   }
 }

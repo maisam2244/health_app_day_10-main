@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 
 import 'package:health/Chat_App/Models/user_models.dart';
 import 'package:health/View/User_Pages/Home_page/home_page.dart';
+import 'package:health/View/User_Pages/Home_page/payment.dart';
 import 'package:health/View/User_Pages/Vitamin_IV_drips_and_fluids/Providers_availability.dart';
 
 class VitaminServices extends StatefulWidget {
@@ -103,7 +104,10 @@ class _VitaminServicesState extends State<VitaminServices> {
                     children: [
                       ListTile(
                         onTap: () {
-                          Get.to(() => ProvidersAvailability());
+                          Get.to(() => PaymentDetailsPage(
+                              providerData: {},
+                              packageName: "Healthy hair",
+                              packagePrice: "200SAR"));
                         },
                         leading: Container(
                           width: 50,
@@ -197,7 +201,10 @@ class _VitaminServicesState extends State<VitaminServices> {
                     children: [
                       ListTile(
                         onTap: () {
-                          Get.to(() => ProvidersAvailability());
+                          Get.to(() => PaymentDetailsPage(
+                              providerData: {},
+                              packageName: "Healthy hair",
+                              packagePrice: "200SAR"));
                         },
                         leading: Container(
                           width: 50,
@@ -291,7 +298,10 @@ class _VitaminServicesState extends State<VitaminServices> {
                     children: [
                       ListTile(
                         onTap: () {
-                          Get.to(() => ProvidersAvailability());
+                          Get.to(() => PaymentDetailsPage(
+                              providerData: {},
+                              packageName: "Healthy hair",
+                              packagePrice: "200SAR"));
                         },
                         leading: Container(
                           width: 50,
@@ -385,7 +395,10 @@ class _VitaminServicesState extends State<VitaminServices> {
                     children: [
                       ListTile(
                         onTap: () {
-                          Get.to(() => ProvidersAvailability());
+                          Get.to(() => PaymentDetailsPage(
+                              providerData: {},
+                              packageName: "Healthy hair",
+                              packagePrice: "200SAR"));
                         },
                         leading: Container(
                           width: 50,
@@ -479,7 +492,10 @@ class _VitaminServicesState extends State<VitaminServices> {
                     children: [
                       ListTile(
                         onTap: () {
-                          Get.to(() => ProvidersAvailability());
+                          Get.to(() => PaymentDetailsPage(
+                              providerData: {},
+                              packageName: "Healthy hair",
+                              packagePrice: "200SAR"));
                         },
                         leading: Container(
                           width: 50,
@@ -573,7 +589,10 @@ class _VitaminServicesState extends State<VitaminServices> {
                     children: [
                       ListTile(
                         onTap: () {
-                          Get.to(() => ProvidersAvailability());
+                          Get.to(() => PaymentDetailsPage(
+                              providerData: {},
+                              packageName: "Healthy hair",
+                              packagePrice: "200SAR"));
                         },
                         leading: Container(
                           width: 50,

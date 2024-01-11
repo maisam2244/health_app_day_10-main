@@ -6,6 +6,7 @@ import 'package:health/Chat_App/Models/firebase_helper.dart';
 import 'package:health/Chat_App/Models/user_models.dart';
 import 'package:health/Resources/Payment_gateway_page/payment_gateway.dart';
 import 'package:health/View/Splash_Screen/splash_screen.dart';
+import 'package:health/View/User_Pages/E-CLINIC/e_clinic.dart';
 import 'package:health/View/User_Pages/Home_page/Lab_resources/lab_more_packages.dart';
 import 'package:health/View/User_Pages/Home_page/home_page.dart';
 import 'package:health/View/User_Pages/Home_page/labtest.dart';
@@ -46,7 +47,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      home: LabTest(),
+      home: Splash_Screen(),
       debugShowCheckedModeBanner: false,
       locale: Locale("en", "US"),
       fallbackLocale: Locale("en", "US"),
@@ -69,7 +70,7 @@ class MyAppLoggedIn extends StatelessWidget {
       //   packageName: "packageName",
       //   packagePrice: "packagePrice",
       //   ),
-      home: LabTest(),
+      home: Splash_Screen(),
       debugShowCheckedModeBanner: false,
       locale: Locale("en", "US"),
       fallbackLocale: Locale("en", "US"),
